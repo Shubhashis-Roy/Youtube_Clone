@@ -20,13 +20,13 @@ const Header = () => {
           alt="logo"
           src="https://static.vecteezy.com/system/resources/thumbnails/002/292/406/small/hamburger-menu-line-icon-free-vector.jpg"
         />
-        <a href="/">
-          <img
-            className="h-[65px] w-auto mx-2 cursor-pointer"
-            alt="Youtube-Logo"
-            src={youtubeLogo}
-          />
-        </a>
+        {/* <NavLink to={"/"}> */}
+        <img
+          className="h-[65px] w-auto mx-2 cursor-pointer"
+          alt="Youtube-Logo"
+          src={youtubeLogo}
+        />
+        {/* </NavLink> */}
       </div>
 
       <div className="col-span-10 pt-4 pl-16">

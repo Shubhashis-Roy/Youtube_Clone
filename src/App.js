@@ -5,6 +5,9 @@ import store from "./utils/reduxStore/store";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import MainContainer from "./components/MainContainer";
 import WatchPage from "./components/WatchPage";
+import WatchLetter from "./pages/WatchLetter";
+import LinkedVideoes from "./pages/LinkedVideoes";
+import WatchHistroy from "./pages/WatchHistroy";
 
 const appRouter = createBrowserRouter([
   {
@@ -18,6 +21,18 @@ const appRouter = createBrowserRouter([
       {
         path: "/watch",
         element: <WatchPage />,
+      },
+      {
+        path: "/watch-letter",
+        element: <WatchLetter />,
+      },
+      {
+        path: "/liked-video",
+        element: <LinkedVideoes />,
+      },
+      {
+        path: "/watch-history",
+        element: <WatchHistroy />,
       },
     ],
   },

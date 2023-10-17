@@ -1,4 +1,5 @@
-const Google_Api_Key = "AIzaSyADVcyos0cdviP80Zgcly9uxYWnLizRM-4";
+// const Google_Api_Key = "AIzaSyAIQ9Dk_kWcklIkXfhtr3HJw4m_tWQeSm4";
+const Google_Api_Key = "AIzaSyBQzYTROkbMXXoO6cvFeEse6NxDd9Dzzxk";
 
 export const OFFSET_LIVE_CHAT = 15;
 
