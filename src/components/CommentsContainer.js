@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 const commentsData = [
   {
@@ -10,6 +10,33 @@ const commentsData = [
     name: "Subha",
     text: "a piece of text placed within a program to help other users to understand it",
     replies: [
+      {
+        name: "Subha",
+        text: "a piece of text placed within a program to help other users to understand it",
+        replies: [
+          {
+            name: "Subha",
+            text: "a piece of text placed within a program to help other users to understand it",
+            replies: [
+              {
+                name: "Subha",
+                text: "a piece of text placed within a program to help other users to understand it",
+                replies: [],
+              },
+            ],
+          },
+          {
+            name: "Subha",
+            text: "a piece of text placed within a program to help other users to understand it",
+            replies: [],
+          },
+        ],
+      },
+      {
+        name: "Subha",
+        text: "a piece of text placed within a program to help other users to understand it",
+        replies: [],
+      },
       {
         name: "Subha",
         text: "a piece of text placed within a program to help other users to understand it",
@@ -81,12 +108,28 @@ const SingleComment = ({ data }) => {
 };
 
 const CommentsList = ({ comments }) => {
+  const [showComments, setShowComments] = useState(false);
+
+  const handleClicked = () => {
+    setShowComments(!showComments);
+  };
+
   return comments.map((comment, index) => (
     <div key={index}>
       <SingleComment data={comment} />
-      <div className="pl-5 border border-l-gray-400 ml-5">
-        <CommentsList comments={comment.replies} />
-      </div>
+      {comment.replies.length >= 1 && (
+        <>
+          <div className="cursor-pointer flex" onClick={handleClicked}>
+            {showComments ? "🔼" : "🔽"}
+            <h1 className="ml-2"> {comment.replies.length} Replies </h1>
+          </div>
+        </>
+      )}
+      {showComments && (
+        <div className="pl-5 border border-l-gray-400 ml-5">
+          <CommentsList comments={comment.replies} />
+        </div>
+      )}
     </div>
   ));
 };
