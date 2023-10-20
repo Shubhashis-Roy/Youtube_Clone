@@ -5,15 +5,19 @@ const chatSlice = createSlice({
   name: "chat",
   initialState: {
     messages: [],
+    commentSection: [],
   },
   reducers: {
     addMessage: (state, action) => {
       state.messages.splice(OFFSET_LIVE_CHAT, 1);
       state.messages.unshift(action.payload);
     },
+    addComment: (state, action) => {
+      state.commentSection.push(action.payload);
+    },
   },
 });
 
-export const { addMessage } = chatSlice.actions;
+export const { addMessage, addComment } = chatSlice.actions;
 
 export default chatSlice.reducer;
