@@ -43,7 +43,7 @@ const SingleComment = ({
   };
 
   return (
-    <div className="shadow-sm p-2 rounded-lg my-2">
+    <div className="shadow-sm py-2 rounded-lg my-2">
       <div className="flex">
         <img
           className="w-8 h-8 rounded-xl"

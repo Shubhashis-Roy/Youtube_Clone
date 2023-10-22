@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import VideoCard from "./VideoCard";
 import { Youtube_Video_API } from "../utils/constant";
 import { Link } from "react-router-dom";
-import WatchPage from "./WatchPage";
 
 const VideoContainer = () => {
   const [videos, setVideos] = useState([]);

@@ -26,6 +26,11 @@ const Sidebar = () => {
           Liked Videoes
         </h3>
       </Link>
+      <Link to="/subscribes">
+        <h3 className="font-bold  bg-green-500 m-1 p-1 rounded-lg">
+          Subscribes
+        </h3>
+      </Link>
       <ul>
         <li>Music</li>
         <li>Coding</li>

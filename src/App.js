@@ -8,6 +8,7 @@ import WatchPage from "./components/WatchPage";
 import WatchLetter from "./pages/WatchLetter";
 import LinkedVideoes from "./pages/LinkedVideoes";
 import WatchHistroy from "./pages/WatchHistroy";
+import Subscribe from "./pages/Subscribe";
 
 const appRouter = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/watch-history",
         element: <WatchHistroy />,
+      },
+      {
+        path: "/subscribes",
+        element: <Subscribe />,
       },
     ],
   },

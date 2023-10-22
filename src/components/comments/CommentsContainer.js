@@ -35,7 +35,7 @@ const CommentsList = ({
         </>
       )}
       {showComments && (
-        <div className="pl-5  ml-5">
+        <div className="pl-5  ml-6">
           <CommentsList
             handleInsertNode={handleInsertNode}
             handleDeleteNode={handleDeleteNode}
@@ -70,7 +70,7 @@ const CommentsContainer = () => {
   };
 
   return (
-    <div className="m-5 p-2 ">
+    <div className="mt-6 py-2 pr-6">
       <h1 className="text-xl font-bold">Comments:</h1>
       <CommentsList
         key={commentsData.id}

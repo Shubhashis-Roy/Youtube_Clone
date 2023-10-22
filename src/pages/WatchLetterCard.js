@@ -1,7 +1,6 @@
 import React from "react";
 
 const WatchLetterCard = ({ info }) => {
-  // console.log("WatchLetterCard", info);
   const { snippet, statistics } = info;
   const { channelTitle, title, thumbnails, description } = snippet;
   const { viewCount } = statistics;

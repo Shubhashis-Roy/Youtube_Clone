@@ -7,6 +7,7 @@ const watchLetterSlice = createSlice({
     watchLetterItem: [],
     LinkedVideoes: [],
     WatchHistory: [],
+    subscribe: [],
   },
   reducers: {
     addItem: (state, action) => {
@@ -26,10 +27,18 @@ const watchLetterSlice = createSlice({
     addWatchHistory: (state, action) => {
       state.WatchHistory.push(action.payload);
     },
+    addSubscribe: (state, action) => {
+      state.subscribe.push(action.payload);
+    },
   },
 });
 
-export const { addItem, addWatchLetter, addLikedVideo, addWatchHistory } =
-  watchLetterSlice.actions;
+export const {
+  addItem,
+  addWatchLetter,
+  addLikedVideo,
+  addWatchHistory,
+  addSubscribe,
+} = watchLetterSlice.actions;
 
 export default watchLetterSlice.reducer;

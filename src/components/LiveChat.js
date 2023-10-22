@@ -3,6 +3,7 @@ import ChatMessage from "./ChatMessage";
 import { useDispatch, useSelector } from "react-redux";
 import { addMessage } from "../utils/reduxStore/chatSlice";
 import { generateRandomName, makeid } from "../utils/helper";
+import { LiveChat_SRC, LiveChat_UserSrc } from "../utils/constant";
 
 const LiveChat = () => {
   const [liveMessage, setLiveMessage] = useState();
@@ -15,6 +16,7 @@ const LiveChat = () => {
       dispatch(
         addMessage({
           name: generateRandomName(),
+          src: LiveChat_SRC,
           message: makeid(15) + " " + "🚀",
         })
       );
@@ -27,33 +29,52 @@ const LiveChat = () => {
 
   return (
     <>
-      <div className=" w-full h-[400px]  ml-2 p-2 border border-black bg-slate-200 rounded-lg overflow-y-scroll flex flex-col-reverse ">
+      <div className="border border-gray-400 w-[450px] ml-5 rounded-t-xl bg-gray-100 ">
+        <p className="py-3 px-6 ">Top Chat</p>
+      </div>
+      <div className=" w-[450px] h-[400px] ml-5 p-2 border-l border-r border-gray-400 bg-gray-100 overflow-y-scroll flex flex-col-reverse ">
         {chatMessages.map((c, index) => (
-          <ChatMessage key={index} name={c.name} message={c.message} />
+          <ChatMessage
+            key={index}
+            name={c.name}
+            src={c.src}
+            message={c.message}
+          />
         ))}
       </div>
       <form
-        className="w-full p-1 ml-2 border border-black"
+        className="w-[450px] rounded-b-lg p-1 ml-5 border border-gray-400"
         onSubmit={(e) => {
           e.preventDefault();
           dispatch(
             addMessage({
-              name: "subha",
+              name: "Subha",
+              src: LiveChat_UserSrc,
               message: liveMessage,
             })
           );
           setLiveMessage("");
         }}
       >
-        <input
-          className="w-80 p-[1px] border border-red-400"
-          type="text"
-          value={liveMessage}
-          onChange={(e) => setLiveMessage(e.target.value)}
-        />
-        <button className="mx-2 bg-green-200 px-3 py-1 rounded-lg ">
-          Send
-        </button>
+        <div className="flex ml-3 pt-2">
+          <img
+            className="w-8 h-8 rounded-full"
+            alt="chatLogo"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-Ju7-0_0yWlACt1tNKDc003Rx1D4gN-wvww&usqp=CAU"
+          />
+          <p className="m-1 pl-2 text-gray-700 text-[15px]">Subha</p>
+        </div>
+        <div className="ml-5 mb-5">
+          <input
+            className="w-[320px] p-[1px] border-b border-gray-500 text-gray-950"
+            type="text"
+            value={liveMessage}
+            onChange={(e) => setLiveMessage(e.target.value)}
+          />
+          <button className=" mt-0 ml-4 bg-green-200 px-3 py-1 rounded-lg ">
+            Send
+          </button>
+        </div>
       </form>
     </>
   );
