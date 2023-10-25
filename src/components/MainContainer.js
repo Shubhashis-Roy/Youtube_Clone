@@ -8,12 +8,12 @@ const MainContainer = () => {
   const searchResult = useSelector((store) => store.searchResults.results);
 
   if (!searchResult) return;
-  // console.log(searchResult.length);
 
   return (
-    <div>
-      <ButtonList />
-      {searchResult.length >= 1 ? <ShowSearchResults /> : <VideoContainer />}
+    <div className="mt-[64px] ">
+      <div className="mt-10">
+        {searchResult.length >= 1 ? <ShowSearchResults /> : <VideoContainer />}
+      </div>
     </div>
   );
 };

@@ -42,8 +42,6 @@ const WatchPageButton = () => {
     dispatch(addSubscribe(watchedVideo));
   };
 
-  console.log(watchedVideo, "helo");
-
   const { snippet, statistics } = watchedVideo;
   const { channelTitle, title, channelId, publishedAt } = snippet;
   const { viewCount, likeCount } = statistics;
@@ -75,10 +73,6 @@ const WatchPageButton = () => {
     const json = await data.json();
     const subscriberCount = json.items[0].statistics.subscriberCount;
     setSubscriber(subscriberCount);
-  };
-
-  const handleLoadMore = () => {
-    setMore(!more);
   };
 
   return (
@@ -130,7 +124,7 @@ const WatchPageButton = () => {
           </div>
           <div className="mt-3">
             <button
-              className="px-4 py-2 ml-2 mt-1 bg-blue-500 rounded-full text-white"
+              className="px-4 py-2 ml-2 mt-1 bg-gray-300 rounded-full hover:bg-gray-400"
               onClick={handleSave}
             >
               <div className="flex">
@@ -141,7 +135,7 @@ const WatchPageButton = () => {
           </div>
         </div>
       </div>
-      <div className="bg-gray-200 mt-3 p-2 rounded-xl">
+      <div className="bg-gray-200 mt-3 p-2 rounded-xl hover:bg-gray-300 ">
         <p className="font-bold"> {convertNumber(viewCount)} views</p>
         <p className="cursor-pointer font-bold">
           publish Date : {publishDate.substring(0, 40)}

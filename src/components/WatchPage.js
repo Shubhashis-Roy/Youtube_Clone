@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { closeMenu } from "../utils/reduxStore/appSlice";
+import { closeMenu, headerButtonClose } from "../utils/reduxStore/appSlice";
 import { useSearchParams } from "react-router-dom";
 import CommentsContainer from "./comments/CommentsContainer";
 import LiveChat from "./LiveChat";
@@ -14,8 +14,12 @@ const WatchPage = () => {
     dispatch(closeMenu());
   }, []);
 
+  useEffect(() => {
+    dispatch(headerButtonClose());
+  }, []);
+
   return (
-    <div className="ml-10 mt-3">
+    <div className="ml-14 mt-16">
       <div className="x-5 pt-3 flex w-full">
         <div>
           <iframe

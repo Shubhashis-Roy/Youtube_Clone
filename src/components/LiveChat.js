@@ -28,11 +28,11 @@ const LiveChat = () => {
   }, []);
 
   return (
-    <>
-      <div className="border border-gray-400 w-[450px] ml-5 rounded-t-xl bg-gray-100 ">
+    <div>
+      <div className="border border-gray-400 w-[420px] ml-6 rounded-t-xl bg-gray-100 ">
         <p className="py-3 px-6 ">Top Chat</p>
       </div>
-      <div className=" w-[450px] h-[400px] ml-5 p-2 border-l border-r border-gray-400 bg-gray-100 overflow-y-scroll flex flex-col-reverse ">
+      <div className=" w-[420px] h-[400px] ml-6 p-2 border-l border-r border-gray-400 bg-gray-100 overflow-y-scroll flex flex-col-reverse ">
         {chatMessages.map((c, index) => (
           <ChatMessage
             key={index}
@@ -43,7 +43,7 @@ const LiveChat = () => {
         ))}
       </div>
       <form
-        className="w-[450px] rounded-b-lg p-1 ml-5 border border-gray-400"
+        className="w-[420px] rounded-b-lg p-1 ml-6 border border-gray-400"
         onSubmit={(e) => {
           e.preventDefault();
           dispatch(
@@ -66,7 +66,7 @@ const LiveChat = () => {
         </div>
         <div className="ml-5 mb-5">
           <input
-            className="w-[320px] p-[1px] border-b border-gray-500 text-gray-950"
+            className="w-[290px] p-[1px] border-b border-gray-500 text-gray-950"
             type="text"
             value={liveMessage}
             onChange={(e) => setLiveMessage(e.target.value)}
@@ -76,7 +76,7 @@ const LiveChat = () => {
           </button>
         </div>
       </form>
-    </>
+    </div>
   );
 };
 

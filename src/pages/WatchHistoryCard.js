@@ -6,7 +6,7 @@ const WatchHistoryCard = ({ info }) => {
   const { viewCount } = statistics;
 
   return (
-    <div className="flex mb-4 mt-4 ml-4">
+    <div className="flex mb-4 mt-4 ml-4 hover:bg-gray-300 duration-200 rounded-lg py-1 px-2">
       <div className="w-[265px]">
         <img
           className="w-[265px] h-[170px] rounded-xl"
