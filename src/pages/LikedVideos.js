@@ -13,7 +13,7 @@ const LikedVideos = () => {
 
   useEffect(() => {
     dispatch(headerButtonClose());
-  });
+  }, []);
 
   if (LikedVideos.length === 0) {
     return (

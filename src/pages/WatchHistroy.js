@@ -1,15 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import WatchHistoryCard from "./WatchHistoryCard";
 import Bar from "../components/Bar";
-// import Delete from "../img/Delete.png";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { clearHistory } from "../utils/reduxStore/watchLetterSlice";
+import { headerButtonClose } from "../utils/reduxStore/appSlice";
 
 const WatchHistroy = () => {
   const WatchHistory = useSelector((store) => store.watchLetter.WatchHistory);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(headerButtonClose());
+  }, []);
 
   if (WatchHistory.length === 0) {
     return (
@@ -42,7 +46,6 @@ const WatchHistroy = () => {
   };
 
   const WatchHistoryData = data.reverse();
-
   const totalVideo = WatchHistoryData.length;
 
   return (

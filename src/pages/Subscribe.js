@@ -11,7 +11,7 @@ const Subscribe = () => {
 
   useEffect(() => {
     dispatch(headerButtonClose());
-  });
+  }, []);
 
   if (subscribeVideo.length === 0) {
     return (

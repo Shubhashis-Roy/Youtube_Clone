@@ -16,7 +16,7 @@ const Sidebar = () => {
   if (!isManuOpen) return null;
 
   return (
-    <div className="p-5 w-[18%] shadow-lg cursor-pointer fixed bg-white h-full">
+    <div className="p-5 w-[18%] shadow-lg cursor-pointer z-10 fixed bg-white h-full">
       <img
         onClick={() => toggleMenuHandle()}
         className="h-[65px] pt-0 cursor-pointer"
