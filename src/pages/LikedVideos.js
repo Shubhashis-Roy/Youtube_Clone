@@ -7,15 +7,15 @@ import { convertNumber } from "../utils/helper";
 import PlayButton from "../img/PlayButton.png";
 import { headerButtonClose } from "../utils/reduxStore/appSlice";
 
-const LinkedVideoes = () => {
-  const LinkedVideoes = useSelector((store) => store.watchLetter.LinkedVideoes);
+const LikedVideos = () => {
+  const LikedVideos = useSelector((store) => store.watchLetter.LikedVideos);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(headerButtonClose());
   });
 
-  if (LinkedVideoes.length === 0) {
+  if (LikedVideos.length === 0) {
     return (
       <div className="flex">
         <Bar />
@@ -30,9 +30,9 @@ const LinkedVideoes = () => {
     );
   }
 
-  const totalVideo = LinkedVideoes.length;
+  const totalVideo = LikedVideos.length;
 
-  const img = LinkedVideoes[0];
+  const img = LikedVideos[0];
   const { snippet, statistics } = img;
   const { thumbnails } = snippet;
   const { viewCount } = statistics;
@@ -41,7 +41,7 @@ const LinkedVideoes = () => {
     <div className="flex ">
       <Bar />
       <div className="mt-20 bg-gray-700 w-[360px] h-[525px] ml-[98px] rounded-xl fixed">
-        <Link to={"/watch?v=" + LinkedVideoes[0].id}>
+        <Link to={"/watch?v=" + LikedVideos[0].id}>
           <img
             className="w-[310px] h-[200px] rounded-xl m-6 "
             alt="thumnail"
@@ -54,7 +54,7 @@ const LinkedVideoes = () => {
           <p className="text-white mt-3"> {totalVideo} videos </p>
         </div>
         <div className="flex ml-5 mt-6">
-          <Link to={"/watch?v=" + LinkedVideoes[0].id}>
+          <Link to={"/watch?v=" + LikedVideos[0].id}>
             <button className="px-10 pt-[7px] my-2 bg-white rounded-full flex">
               <img src={PlayButton} className="mr-1" />
               Play
@@ -66,7 +66,7 @@ const LinkedVideoes = () => {
         </div>
       </div>
       <div className="mt-[95px] ml-[59%] ">
-        {LinkedVideoes.map((item) => (
+        {LikedVideos.map((item) => (
           <Link to={"/watch?v=" + item.id}>
             <WatchLetterCard info={item} />
           </Link>
@@ -76,4 +76,4 @@ const LinkedVideoes = () => {
   );
 };
 
-export default LinkedVideoes;
+export default LikedVideos;

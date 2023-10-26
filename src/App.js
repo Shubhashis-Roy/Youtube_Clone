@@ -6,9 +6,9 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import MainContainer from "./components/MainContainer";
 import WatchPage from "./components/WatchPage";
 import WatchLetter from "./pages/WatchLetter";
-import LinkedVideoes from "./pages/LinkedVideoes";
 import WatchHistroy from "./pages/WatchHistroy";
 import Subscribe from "./pages/Subscribe";
+import LikedVideos from "./pages/LikedVideos";
 
 const appRouter = createBrowserRouter([
   {
@@ -29,7 +29,7 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/liked-video",
-        element: <LinkedVideoes />,
+        element: <LikedVideos />,
       },
       {
         path: "/watch-history",

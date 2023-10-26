@@ -15,32 +15,89 @@ import {
   addSubscribe,
   addWatchHistory,
   addWatchLetter,
+  removeLikedVideo,
+  addDisLikedVideo,
+  removeDisLikedVideo,
+  removeSubscribe,
+  removeWatchLetter,
 } from "../utils/reduxStore/watchLetterSlice";
-import { useSearchParams } from "react-router-dom";
 
 const WatchPageButton = () => {
   const [imgUrl, setImaUrl] = useState();
   const [subscriber, setSubscriber] = useState();
   const [more, setMore] = useState(false);
-  const [like, setLike] = useState();
-  const [searchParam] = useSearchParams();
   const dispatch = useDispatch();
 
   const watchedVideo = useSelector((store) => store.watchLetter.item);
+  const LikedVideos = useSelector((store) => store.watchLetter.LikedVideos);
+  const subscribe = useSelector((store) => store.watchLetter.subscribe);
+  const watchLetterVideo = useSelector(
+    (store) => store.watchLetter.watchLetterItem
+  );
+  const disLikedVideos = useSelector(
+    (store) => store.watchLetter.disLikedVideos
+  );
   dispatch(addWatchHistory(watchedVideo));
 
   const handleSave = () => {
-    dispatch(addWatchLetter(watchedVideo));
+    if (watchLetterVideo.length === 0) {
+      dispatch(addWatchLetter(watchedVideo));
+    } else {
+      if (!watchLetterVideo.some((item) => item.id === watchedVideo.id)) {
+        dispatch(addWatchLetter(watchedVideo));
+      }
+    }
+  };
+
+  const handleRemoveSave = () => {
+    dispatch(removeWatchLetter(watchedVideo.id));
   };
 
   const handleLikedVideo = () => {
-    dispatch(addLikedVideo(watchedVideo));
-    setLike(!like);
+    dispatch(removeDisLikedVideo(watchedVideo.id));
+    if (LikedVideos.length === 0) {
+      dispatch(addLikedVideo(watchedVideo));
+    } else {
+      if (!LikedVideos.some((item) => item.id === watchedVideo.id)) {
+        dispatch(addLikedVideo(watchedVideo));
+      }
+    }
+  };
+
+  const handleDisLiked = () => {
+    dispatch(removeLikedVideo(watchedVideo.id));
+    if (disLikedVideos.length === 0) {
+      dispatch(addDisLikedVideo(watchedVideo));
+    } else {
+      if (!disLikedVideos.some((item) => item.id === watchedVideo.id)) {
+        dispatch(addDisLikedVideo(watchedVideo));
+      }
+    }
   };
 
   const handleSubscribe = () => {
-    dispatch(addSubscribe(watchedVideo));
+    if (subscribe.length === 0) {
+      dispatch(addSubscribe(watchedVideo));
+    } else {
+      if (!subscribe.some((item) => item.id === watchedVideo.id)) {
+        dispatch(addSubscribe(watchedVideo));
+      }
+    }
   };
+
+  const handleUnSubscribe = () => {
+    dispatch(removeSubscribe(watchedVideo.id));
+  };
+
+  useEffect(() => {
+    getChannel_IMG_URL();
+  }, []);
+
+  useEffect(() => {
+    getSubscriberCounter();
+  }, []);
+
+  // if (watchedVideo.length === 0) return;
 
   const { snippet, statistics } = watchedVideo;
   const { channelTitle, title, channelId, publishedAt } = snippet;
@@ -48,10 +105,6 @@ const WatchPageButton = () => {
 
   const dateTime = new Date(publishedAt);
   const publishDate = dateTime.toLocaleDateString("en-US", options);
-
-  useEffect(() => {
-    getChannel_IMG_URL();
-  }, []);
 
   const getChannel_IMG_URL = async () => {
     const data = await fetch(
@@ -61,10 +114,6 @@ const WatchPageButton = () => {
     const Url = json.items[0].snippet.thumbnails.default.url;
     setImaUrl(Url);
   };
-
-  useEffect(() => {
-    getSubscriberCounter();
-  }, []);
 
   const getSubscriberCounter = async () => {
     const data = await fetch(
@@ -97,10 +146,14 @@ const WatchPageButton = () => {
             </div>
           </div>
           <button
-            className="px-4 py-1 ml-8 mt-5 bg-black rounded-full text-white"
+            className="px-4 py-1 ml-8 mt-4 bg-black rounded-full text-white"
             onClick={handleSubscribe}
           >
-            Subscribe
+            {!subscribe.some((item) => item.id === watchedVideo.id) ? (
+              "Subscribe"
+            ) : (
+              <p onClick={handleUnSubscribe}>B Subscribed</p>
+            )}
           </button>
         </div>
         <div className="flex ml-[135px]">
@@ -110,7 +163,7 @@ const WatchPageButton = () => {
               onClick={handleLikedVideo}
             >
               <div className="flex">
-                {like ? (
+                {!LikedVideos.some((item) => item.id === watchedVideo.id) ? (
                   <img className="w-[30px]" src={likeButton} />
                 ) : (
                   <img className="w-[29px] h-[28.5px]" src={afterLikeButton} />
@@ -118,8 +171,15 @@ const WatchPageButton = () => {
                 <p className="ml-2 mt-1"> 155k</p>
               </div>
             </button>
-            <button className="bg-gray-300 rounded-r-full hover:bg-gray-400 px-3 py-1">
-              <img className="w-[30px] ml-1" src={dislikeButton} />
+            <button
+              className="bg-gray-300 rounded-r-full hover:bg-gray-400 px-3 py-1"
+              onClick={handleDisLiked}
+            >
+              {!disLikedVideos.some((item) => item.id === watchedVideo.id) ? (
+                <img className="w-[30px] ml-1" src={dislikeButton} />
+              ) : (
+                <p>Dis</p>
+              )}
             </button>
           </div>
           <div className="mt-3">
@@ -127,10 +187,14 @@ const WatchPageButton = () => {
               className="px-4 py-2 ml-2 mt-1 bg-gray-300 rounded-full hover:bg-gray-400"
               onClick={handleSave}
             >
-              <div className="flex">
-                <MdOutlineAddCircle className="mt-1" />
-                <p className="ml-1">Save</p>
-              </div>
+              {!watchLetterVideo.some((item) => item.id === watchedVideo.id) ? (
+                <div className="flex">
+                  <MdOutlineAddCircle className="mt-1" />
+                  <p className="ml-1">Save</p>
+                </div>
+              ) : (
+                <p onClick={handleRemoveSave}>Unsave</p>
+              )}
             </button>
           </div>
         </div>

@@ -5,7 +5,8 @@ const watchLetterSlice = createSlice({
   initialState: {
     item: [],
     watchLetterItem: [],
-    LinkedVideoes: [],
+    LikedVideos: [],
+    disLikedVideos: [],
     WatchHistory: [],
     subscribe: [],
   },
@@ -19,10 +20,37 @@ const watchLetterSlice = createSlice({
       }
     },
     addWatchLetter: (state, action) => {
-      state.watchLetterItem.push(action.payload);
+      state.watchLetterItem.unshift(action.payload);
+    },
+    removeWatchLetter: (state, action) => {
+      let index = state.watchLetterItem.findIndex(
+        (item) => item.id === action.payload
+      );
+      if (index !== -1) {
+        state.watchLetterItem.splice(index, 1);
+      }
     },
     addLikedVideo: (state, action) => {
-      state.LinkedVideoes.push(action.payload);
+      state.LikedVideos.unshift(action.payload);
+    },
+    removeLikedVideo: (state, action) => {
+      let index = state.LikedVideos.findIndex(
+        (item) => item.id === action.payload
+      );
+      if (index !== -1) {
+        state.LikedVideos.splice(index, 1);
+      }
+    },
+    addDisLikedVideo: (state, action) => {
+      state.disLikedVideos.push(action.payload);
+    },
+    removeDisLikedVideo: (state, action) => {
+      let index = state.disLikedVideos.findIndex(
+        (item) => item.id === action.payload
+      );
+      if (index !== -1) {
+        state.disLikedVideos.splice(index, 1);
+      }
     },
     addWatchHistory: (state, action) => {
       state.WatchHistory.push(action.payload);
@@ -31,7 +59,15 @@ const watchLetterSlice = createSlice({
       state.WatchHistory = [];
     },
     addSubscribe: (state, action) => {
-      state.subscribe.push(action.payload);
+      state.subscribe.unshift(action.payload);
+    },
+    removeSubscribe: (state, action) => {
+      let index = state.subscribe.findIndex(
+        (item) => item.id === action.payload
+      );
+      if (index !== -1) {
+        state.subscribe.splice(index, 1);
+      }
     },
   },
 });
@@ -39,10 +75,15 @@ const watchLetterSlice = createSlice({
 export const {
   addItem,
   addWatchLetter,
+  removeWatchLetter,
   addLikedVideo,
+  removeLikedVideo,
+  addDisLikedVideo,
+  removeDisLikedVideo,
   addWatchHistory,
-  addSubscribe,
   clearHistory,
+  addSubscribe,
+  removeSubscribe,
 } = watchLetterSlice.actions;
 
 export default watchLetterSlice.reducer;
