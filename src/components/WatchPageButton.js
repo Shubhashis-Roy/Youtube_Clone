@@ -7,9 +7,12 @@ import { Subscriber_Counter_2ndPart } from "../utils/constant";
 import { convertNumber } from "../utils/helper";
 import { MdOutlineAddCircle } from "react-icons/md";
 import dislikeButton from "../img/dislikeButton.png";
+import AfterDislikeButton from "../img/AfterdislikeButton.png";
 import likeButton from "../img/likeButton.png";
 import afterLikeButton from "../img/afterLike.png";
 import { options } from "../utils/helper";
+import { AiTwotoneBell } from "react-icons/ai";
+import { AiFillCheckCircle } from "react-icons/ai";
 import {
   addLikedVideo,
   addSubscribe,
@@ -146,20 +149,27 @@ const WatchPageButton = () => {
             </div>
           </div>
           <button
-            className="px-4 py-1 ml-8 mt-4 bg-black rounded-full text-white"
+            className={`pl-3 pr-4 py-1 ml-7 mt-4 ${
+              !subscribe.some((item) => item.id === watchedVideo.id)
+                ? "bg-black hover:bg-gray-800 duration-200"
+                : "bg-gray-300 hover:bg-gray-400 duration-200"
+            } rounded-full text-white`}
             onClick={handleSubscribe}
           >
             {!subscribe.some((item) => item.id === watchedVideo.id) ? (
               "Subscribe"
             ) : (
-              <p onClick={handleUnSubscribe}>B Subscribed</p>
+              <p onClick={handleUnSubscribe} className="flex text-black ">
+                {" "}
+                <AiTwotoneBell className="text-2xl mr-2" /> Subscribed
+              </p>
             )}
           </button>
         </div>
-        <div className="flex ml-[135px]">
+        <div className="flex ml-auto ">
           <div className="mt-4">
             <button
-              className="bg-gray-300 rounded-l-full hover:bg-gray-400 px-3 py-1"
+              className="bg-gray-300 rounded-l-full hover:bg-gray-400 px-3 py-1 duration-200"
               onClick={handleLikedVideo}
             >
               <div className="flex">
@@ -168,23 +178,26 @@ const WatchPageButton = () => {
                 ) : (
                   <img className="w-[29px] h-[28.5px]" src={afterLikeButton} />
                 )}
-                <p className="ml-2 mt-1"> 155k</p>
+                <p className="ml-2 mt-1"> {convertNumber(likeCount)}</p>
               </div>
             </button>
             <button
-              className="bg-gray-300 rounded-r-full hover:bg-gray-400 px-3 py-1"
+              className="bg-gray-300 rounded-r-full hover:bg-gray-400 duration-200 px-3 py-1"
               onClick={handleDisLiked}
             >
               {!disLikedVideos.some((item) => item.id === watchedVideo.id) ? (
                 <img className="w-[30px] ml-1" src={dislikeButton} />
               ) : (
-                <p>Dis</p>
+                <img
+                  className="w-[30px] h-[28px] ml-1"
+                  src={AfterDislikeButton}
+                />
               )}
             </button>
           </div>
           <div className="mt-3">
             <button
-              className="px-4 py-2 ml-2 mt-1 bg-gray-300 rounded-full hover:bg-gray-400"
+              className="px-4 py-2 ml-2 mt-1 bg-gray-300 rounded-full hover:bg-gray-400 duration-200"
               onClick={handleSave}
             >
               {!watchLetterVideo.some((item) => item.id === watchedVideo.id) ? (
@@ -193,13 +206,16 @@ const WatchPageButton = () => {
                   <p className="ml-1">Save</p>
                 </div>
               ) : (
-                <p onClick={handleRemoveSave}>Unsave</p>
+                <div className="flex" onClick={handleRemoveSave}>
+                  <AiFillCheckCircle className="mt-1 mr-1" />
+                  <p>Saved</p>
+                </div>
               )}
             </button>
           </div>
         </div>
       </div>
-      <div className="bg-gray-200 mt-3 p-2 rounded-xl hover:bg-gray-300 ">
+      <div className="bg-gray-200 mt-3 p-2 rounded-xl hover:bg-gray-300 duration-200">
         <p className="font-bold"> {convertNumber(viewCount)} views</p>
         <p className="cursor-pointer font-bold">
           publish Date : {publishDate.substring(0, 40)}

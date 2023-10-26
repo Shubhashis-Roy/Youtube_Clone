@@ -4,7 +4,7 @@ import { Youtube_Video_API } from "../utils/constant";
 import { Link } from "react-router-dom";
 import HomeBar from "./HomeBar";
 import { useDispatch } from "react-redux";
-import { headerButtonShow } from "../utils/reduxStore/appSlice";
+import { closeMenu, headerButtonShow } from "../utils/reduxStore/appSlice";
 
 const VideoContainer = () => {
   const [videos, setVideos] = useState([]);
@@ -17,6 +17,10 @@ const VideoContainer = () => {
 
   useEffect(() => {
     getVideos();
+  }, []);
+
+  useEffect(() => {
+    dispatch(closeMenu());
   }, []);
 
   const getVideos = async () => {

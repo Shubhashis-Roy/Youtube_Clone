@@ -5,7 +5,7 @@ import WatchHistoryCard from "./WatchHistoryCard";
 import Bar from "../components/Bar";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { clearHistory } from "../utils/reduxStore/watchLetterSlice";
-import { headerButtonClose } from "../utils/reduxStore/appSlice";
+import { closeMenu, headerButtonClose } from "../utils/reduxStore/appSlice";
 
 const WatchHistroy = () => {
   const WatchHistory = useSelector((store) => store.watchLetter.WatchHistory);
@@ -13,6 +13,10 @@ const WatchHistroy = () => {
 
   useEffect(() => {
     dispatch(headerButtonClose());
+  }, []);
+
+  useEffect(() => {
+    dispatch(closeMenu());
   }, []);
 
   if (WatchHistory.length === 0) {

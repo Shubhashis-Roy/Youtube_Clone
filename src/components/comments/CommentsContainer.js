@@ -26,11 +26,11 @@ const CommentsList = ({
       {comment.replies.length >= 1 && (
         <>
           <div
-            className="cursor-pointer ml-16 px-9 py-1 rounded-lg flex bg-blue-700 w-56 text-white"
+            className="cursor-pointer ml-16 px-4 py-2 rounded-lg flex bg-blue-700 w-32 text-white"
             onClick={handleClicked}
           >
             {showComments ? "🔼" : "🔽"}
-            <h1 className="ml-2"> Views {comment.replies.length} Replies </h1>
+            <h1 className="ml-2">{comment.replies.length} Replies </h1>
           </div>
         </>
       )}

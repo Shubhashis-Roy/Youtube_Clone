@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import Bar from "../components/Bar";
 import { convertNumber } from "../utils/helper";
 import PlayButton from "../img/PlayButton.png";
-import { headerButtonClose } from "../utils/reduxStore/appSlice";
+import { closeMenu, headerButtonClose } from "../utils/reduxStore/appSlice";
 
 const LikedVideos = () => {
   const LikedVideos = useSelector((store) => store.watchLetter.LikedVideos);
@@ -13,6 +13,10 @@ const LikedVideos = () => {
 
   useEffect(() => {
     dispatch(headerButtonClose());
+  }, []);
+
+  useEffect(() => {
+    dispatch(closeMenu());
   }, []);
 
   if (LikedVideos.length === 0) {

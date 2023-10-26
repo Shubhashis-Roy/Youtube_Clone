@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import WatchLetterCard from "./WatchLetterCard";
 import { Link } from "react-router-dom";
-import { headerButtonClose } from "../utils/reduxStore/appSlice";
+import { closeMenu, headerButtonClose } from "../utils/reduxStore/appSlice";
 import Bar from "../components/Bar";
 import { convertNumber } from "../utils/helper";
 import PlayButton from "../img/PlayButton.png";
@@ -13,6 +13,10 @@ const WatchLetter = () => {
   useEffect(() => {
     dispatch(headerButtonClose());
   });
+
+  useEffect(() => {
+    dispatch(closeMenu());
+  }, []);
 
   const watchLetterItem = useSelector(
     (store) => store.watchLetter.watchLetterItem
