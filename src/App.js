@@ -9,6 +9,7 @@ import WatchLetter from "./pages/WatchLetter";
 import WatchHistroy from "./pages/WatchHistroy";
 import Subscribe from "./pages/Subscribe";
 import LikedVideos from "./pages/LikedVideos";
+import ShowSearchResults from "./pages/ShowSearchResults";
 
 const appRouter = createBrowserRouter([
   {
@@ -39,6 +40,10 @@ const appRouter = createBrowserRouter([
         path: "/subscribes",
         element: <Subscribe />,
       },
+      {
+        path: "/search-results",
+        element: <ShowSearchResults />,
+      },
     ],
   },
 ]);
@@ -47,7 +52,6 @@ function App() {
   return (
     <Provider store={store}>
       <div>
-        <Header />
         <RouterProvider router={appRouter} />
       </div>
     </Provider>

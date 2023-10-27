@@ -39,7 +39,7 @@ const LikedVideos = () => {
   const img = LikedVideos[0];
   const { snippet, statistics } = img;
   const { thumbnails } = snippet;
-  const { viewCount } = statistics;
+  // const { viewCount } = statistics;
 
   return (
     <div className="flex ">
@@ -47,14 +47,21 @@ const LikedVideos = () => {
       <div className="mt-20 bg-gray-700 w-[360px] h-[525px] ml-[98px] rounded-xl fixed">
         <Link to={"/watch?v=" + LikedVideos[0].id}>
           <img
-            className="w-[310px] h-[200px] rounded-xl m-6 "
+            className="w-[310px] h-[180px] rounded-xl m-6 "
             alt="thumnail"
-            src={thumbnails.standard.url}
+            src={thumbnails.medium.url}
           />
         </Link>
         <div className="ml-5">
           <h1 className="text-white font-bold text-2xl">Liked Videos</h1>
-          <p className="text-white "> {convertNumber(viewCount)} views </p>
+          {!statistics ? (
+            <p className="text-white "> Nan views </p>
+          ) : (
+            <p className="text-white ">
+              {" "}
+              {convertNumber(statistics.viewCount)} views{" "}
+            </p>
+          )}
           <p className="text-white mt-3"> {totalVideo} videos </p>
         </div>
         <div className="flex ml-5 mt-6">

@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { Youtube_Suggetions_API, Youtube_Search_API } from "../utils/constant";
 import { chacheResults } from "../utils/reduxStore/searchSlice";
 import { addSearchResults } from "../utils/reduxStore/searchResultSlice";
-import Magnify_Icon from "../img/HeaderIcon/Magnify_Icon.png";
 import { SlMagnifier } from "react-icons/sl";
+import { useNavigate } from "react-router";
 
 const SearchBar = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -12,6 +12,7 @@ const SearchBar = () => {
   const [showSuggetion, setShowSuggetion] = useState();
   const searchChache = useSelector((store) => store.search);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const searchText = useRef(null);
 
@@ -43,9 +44,12 @@ const SearchBar = () => {
   };
 
   const getSearchResults = async () => {
-    const data = await fetch(Youtube_Search_API + searchText.current.value);
-    const json = await data.json();
-    dispatch(addSearchResults(json.items));
+    if (searchQuery.length !== 0) {
+      navigate("/search-results");
+      const data = await fetch(Youtube_Search_API + searchText.current.value);
+      const json = await data.json();
+      dispatch(addSearchResults(json.items));
+    }
   };
 
   const handleSearch = async (item) => {
@@ -75,9 +79,11 @@ const SearchBar = () => {
           onFocus={() => setShowSuggetion(true)}
           onBlur={() => setShowSuggetion(false)}
         />
-        <div className="mt-1 border-b border-t border-r border-gray-400 rounded-r-full bg-gray-200 px-5">
-          <button className="" onClick={getSearchResults}>
-            {/* <img className="w-auto h-8 " alt="Magnify Icon" src={Magnify_Icon} /> */}
+        <div
+          className="mt-1 border-b border-t border-r border-gray-400 rounded-r-full bg-gray-200 px-5 cursor-pointer"
+          onClick={getSearchResults}
+        >
+          <button>
             <SlMagnifier className="mt-3" />
           </button>
         </div>

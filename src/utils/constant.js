@@ -1,5 +1,5 @@
-// const Google_Api_Key = "AIzaSyAIQ9Dk_kWcklIkXfhtr3HJw4m_tWQeSm4";
 const Google_Api_Key = "AIzaSyBQzYTROkbMXXoO6cvFeEse6NxDd9Dzzxk";
+// const Google_Api_Key = "AIzaSyDw4SIBcQlpu6pBZVUO4eRCI475WFkzqE4";
 
 export const OFFSET_LIVE_CHAT = 15;
 
@@ -8,7 +8,9 @@ export const Youtube_Video_API =
   Google_Api_Key;
 
 export const Youtube_Suggetions_API =
-  "http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
+  "https://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
+
+// 'https://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q='
 
 const maxResults = 10;
 

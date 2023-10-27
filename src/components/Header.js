@@ -6,6 +6,7 @@ import { toggleMenu } from "../utils/reduxStore/appSlice";
 import SearchBar from "./SearchBar";
 import ButtonList from "./ButtonList";
 import { HiMiniBars3 } from "react-icons/hi2";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -15,6 +16,8 @@ const Header = () => {
     dispatch(toggleMenu());
   };
 
+  const handleNavigate = () => {};
+
   return (
     <div className=" fixed bg-white w-full">
       <div className="grid grid-flow-col w-full  mb-2 ">
@@ -23,11 +26,14 @@ const Header = () => {
             className="text-[40px] mt-3 ml-5 p-2 cursor-pointer hover:bg-gray-300 rounded-full "
             onClick={() => toggleMenuHandle()}
           />
-          <img
-            className="h-[43px] ml-1 w-auto mt-3 cursor-pointer"
-            alt="Youtube-Logo"
-            src={youtubeLogo}
-          />
+          <Link to="/">
+            <img
+              className="h-[43px] ml-1 w-auto mt-3 cursor-pointer"
+              alt="Youtube-Logo"
+              src={youtubeLogo}
+              onClick={handleNavigate}
+            />
+          </Link>
         </div>
 
         <div className="col-span-10 pt-4 pl-16">

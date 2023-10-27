@@ -1,11 +1,22 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { addItem } from "../utils/reduxStore/watchLetterSlice";
 
 const SearchVideoCard = ({ info }) => {
+  const dispatch = useDispatch();
+
+  const handleDispatchInfo = () => {
+    dispatch(addItem(info));
+  };
+
   const { snippet } = info;
   const { channelTitle, title, thumbnails, description } = snippet;
 
   return (
-    <div className="flex mb-4 mt-3">
+    <div
+      className="flex mt-1 hover:bg-gray-200 rounded-xl p-2 duration-200"
+      onClick={handleDispatchInfo}
+    >
       <div className="w-[350px]">
         <img
           className="w-[350px] rounded-xl"

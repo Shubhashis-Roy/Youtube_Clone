@@ -89,6 +89,7 @@ const WatchPageButton = () => {
   };
 
   const handleUnSubscribe = () => {
+    console.log("unscribe, hai");
     dispatch(removeSubscribe(watchedVideo.id));
   };
 
@@ -101,13 +102,6 @@ const WatchPageButton = () => {
   }, []);
 
   // if (watchedVideo.length === 0) return;
-
-  const { snippet, statistics } = watchedVideo;
-  const { channelTitle, title, channelId, publishedAt } = snippet;
-  const { viewCount, likeCount } = statistics;
-
-  const dateTime = new Date(publishedAt);
-  const publishDate = dateTime.toLocaleDateString("en-US", options);
 
   const getChannel_IMG_URL = async () => {
     const data = await fetch(
@@ -126,6 +120,12 @@ const WatchPageButton = () => {
     const subscriberCount = json.items[0].statistics.subscriberCount;
     setSubscriber(subscriberCount);
   };
+
+  const { snippet, statistics } = watchedVideo;
+  const { channelTitle, title, channelId, publishedAt } = snippet;
+
+  const dateTime = new Date(publishedAt);
+  const publishDate = dateTime.toLocaleDateString("en-US", options);
 
   return (
     <>
@@ -178,7 +178,13 @@ const WatchPageButton = () => {
                 ) : (
                   <img className="w-[29px] h-[28.5px]" src={afterLikeButton} />
                 )}
-                <p className="ml-2 mt-1"> {convertNumber(likeCount)}</p>
+                {!statistics ? (
+                  <p className="ml-2 mt-[3px]">Nan</p>
+                ) : (
+                  <p className="ml-2 mt-1">
+                    {convertNumber(statistics.likeCount)}
+                  </p>
+                )}
               </div>
             </button>
             <button
@@ -216,7 +222,14 @@ const WatchPageButton = () => {
         </div>
       </div>
       <div className="bg-gray-200 mt-3 p-2 rounded-xl hover:bg-gray-300 duration-200">
-        <p className="font-bold"> {convertNumber(viewCount)} views</p>
+        {!statistics ? (
+          <p className="ml-2 mt-[3px]">views: Not Found </p>
+        ) : (
+          <p className="font-bold">
+            {" "}
+            {convertNumber(statistics.viewCount)} views
+          </p>
+        )}
         <p className="cursor-pointer font-bold">
           publish Date : {publishDate.substring(0, 40)}
         </p>
