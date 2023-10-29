@@ -8,9 +8,8 @@ const SearchVideoCard = ({ info }) => {
   const handleDispatchInfo = () => {
     dispatch(addItem(info));
   };
-
   const { snippet } = info;
-  const { channelTitle, title, thumbnails, description } = snippet;
+  const { channelTitle, title, thumbnails, description, publishedAt } = snippet;
 
   return (
     <div
@@ -27,7 +26,20 @@ const SearchVideoCard = ({ info }) => {
       <div className="ml-4 mt-2 w-[700px] ">
         <ul>
           <li className="text-xl"> {title} </li>
-          <li className="text-gray-800 mt-2"> {channelTitle} </li>
+          <li className=" text-gray-800 text-[14px] ml-1 mt-1">
+            {(
+              Math.abs(new Date(publishedAt) - new Date()) /
+              (60 * 60 * 24 * 1000)
+            ).toFixed(0)}
+            days ago
+          </li>
+          <li className="text-gray-800 mt-2 flex">
+            <img
+              className="h-8 w-8 rounded-full mr-2"
+              src={thumbnails.default.url}
+            />
+            <p className="mt-1">{channelTitle}</p>
+          </li>
           <li className=" mt-4 text-gray-800 text-[14px] "> {description} </li>
         </ul>
       </div>

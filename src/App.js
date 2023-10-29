@@ -10,11 +10,13 @@ import WatchHistroy from "./pages/WatchHistroy";
 import Subscribe from "./pages/Subscribe";
 import LikedVideos from "./pages/LikedVideos";
 import ShowSearchResults from "./pages/ShowSearchResults";
+import Error from "./components/Error";
 
 const appRouter = createBrowserRouter([
   {
     path: "/",
     element: <Body />,
+    errorElement: <Error />,
     children: [
       {
         path: "/",

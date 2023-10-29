@@ -36,11 +36,7 @@ const VideoContainer = () => {
       <HomeBar />
       <div className="flex flex-wrap mt-3 ml-20">
         {videos.map((item) => (
-          <>
-            <Link key={item.id} to={"/watch?v=" + item.id}>
-              <VideoCard info={item} />
-            </Link>
-          </>
+          <VideoCard key={item.id} info={item} />
         ))}
       </div>
     </div>
