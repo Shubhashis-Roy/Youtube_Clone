@@ -11,6 +11,7 @@ import Subscribe from "./pages/Subscribe";
 import LikedVideos from "./pages/LikedVideos";
 import ShowSearchResults from "./pages/ShowSearchResults";
 import Error from "./components/Error";
+import ButtonVideoCard from "./components/ButtonVideoCard";
 
 const appRouter = createBrowserRouter([
   {
@@ -45,6 +46,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/search-results",
         element: <ShowSearchResults />,
+      },
+      {
+        path: "/fiter-button",
+        element: <ButtonVideoCard />,
       },
     ],
   },

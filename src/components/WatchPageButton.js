@@ -89,7 +89,6 @@ const WatchPageButton = () => {
   };
 
   const handleUnSubscribe = () => {
-    console.log("unscribe, hai");
     dispatch(removeSubscribe(watchedVideo.id));
   };
 
@@ -100,8 +99,6 @@ const WatchPageButton = () => {
   useEffect(() => {
     getSubscriberCounter();
   }, []);
-
-  // if (watchedVideo.length === 0) return;
 
   const getChannel_IMG_URL = async () => {
     const data = await fetch(

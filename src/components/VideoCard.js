@@ -16,8 +16,6 @@ const VideoCard = ({ info }) => {
   const { channelTitle, title, thumbnails, publishedAt } = snippet;
   const { viewCount } = statistics;
 
-  console.log(publishedAt, "hai");
-
   return (
     <div className="p-2 m-2 after:w-full" onClick={handleInfo}>
       <Link to={"/watch?v=" + info.id}>

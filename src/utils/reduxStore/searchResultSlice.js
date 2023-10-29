@@ -4,14 +4,18 @@ const searchResultSlice = createSlice({
   name: "searchResults",
   initialState: {
     results: [],
+    buttonResults: [],
   },
   reducers: {
     addSearchResults: (state, action) => {
       state.results = action.payload;
     },
+    addButtonResults: (state, action) => {
+      state.buttonResults = action.payload;
+    },
   },
 });
 
-export const { addSearchResults } = searchResultSlice.actions;
+export const { addSearchResults, addButtonResults } = searchResultSlice.actions;
 
 export default searchResultSlice.reducer;
