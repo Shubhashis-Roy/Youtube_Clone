@@ -1,12 +1,13 @@
 import React from "react";
 import youtubeLogo from "../img/HeaderIcon/Youtube_icon.png";
-import UserIcon from "../img/HeaderIcon/UserIcon.png";
+
 import { useDispatch, useSelector } from "react-redux";
 import { toggleMenu } from "../utils/reduxStore/appSlice";
 import SearchBar from "./SearchBar";
 import ButtonList from "./ButtonList";
 import { HiMiniBars3 } from "react-icons/hi2";
 import { Link } from "react-router-dom";
+import GoogleAuth from "./GoogleAuth";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -15,8 +16,6 @@ const Header = () => {
   const toggleMenuHandle = () => {
     dispatch(toggleMenu());
   };
-
-  const handleNavigate = () => {};
 
   return (
     <div className=" fixed bg-white w-full">
@@ -31,7 +30,6 @@ const Header = () => {
               className="h-[43px] ml-1 w-auto mt-3 cursor-pointer"
               alt="Youtube-Logo"
               src={youtubeLogo}
-              onClick={handleNavigate}
             />
           </Link>
         </div>
@@ -41,7 +39,7 @@ const Header = () => {
         </div>
 
         <div className="col-span-1 pt-5">
-          <img className="h-9" alt="user" src={UserIcon} />
+          <GoogleAuth />
         </div>
       </div>
       {isHomePage && (
