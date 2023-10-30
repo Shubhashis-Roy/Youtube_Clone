@@ -5,6 +5,7 @@ import { chacheResults } from "../utils/reduxStore/searchSlice";
 import { addSearchResults } from "../utils/reduxStore/searchResultSlice";
 import { SlMagnifier } from "react-icons/sl";
 import { useNavigate } from "react-router";
+import { AiOutlineClose } from "react-icons/ai";
 
 const SearchBar = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -76,7 +77,7 @@ const SearchBar = () => {
           onBlur={() => setShowSuggetion(false)}
         />
         <div
-          className="mt-1 border-b border-t border-r border-gray-400 rounded-r-full bg-gray-200 px-5 cursor-pointer"
+          className="mt-1 border-b border-t border-r border-gray-400 rounded-r-full bg-gray-200 hover:bg-gray-300 duration-200 px-5 cursor-pointer"
           onClick={getSearchResults}
         >
           <button>
@@ -84,6 +85,14 @@ const SearchBar = () => {
           </button>
         </div>
       </form>
+      {searchQuery && (
+        <button
+          onClick={() => setSearchQuery("")}
+          className="absolute hover:bg-gray-300 hover:rounded-full w-9 h-9 right-[35.5%] top-[21px]"
+        >
+          <AiOutlineClose className="text-2xl ml-[6px]" />
+        </button>
+      )}
 
       {showSuggetion && suggetion?.length > 0 && (
         <div className="fixed ml-8 bg-white px-2 py-2 shadow-2xl w-[440px] rounded-lg border border-gray-200">

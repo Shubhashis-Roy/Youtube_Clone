@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import VideoCard from "./VideoCard";
 import { Youtube_Video_API } from "../utils/constant";
-import { Link } from "react-router-dom";
 import HomeBar from "./HomeBar";
 import { useDispatch } from "react-redux";
 import { closeMenu, headerButtonShow } from "../utils/reduxStore/appSlice";
+import HomeShimmerUI from "./HomeShimmerUI";
 
 const VideoContainer = () => {
   const [videos, setVideos] = useState([]);
@@ -29,7 +29,7 @@ const VideoContainer = () => {
     setVideos(json.items);
   };
 
-  if (!videos) return;
+  if (!videos.length) return <HomeShimmerUI />;
 
   return (
     <div className="flex">

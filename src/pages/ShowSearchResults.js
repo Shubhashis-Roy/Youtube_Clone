@@ -13,14 +13,17 @@ const ShowSearchResults = () => {
     dispatch(headerButtonClose());
   }, []);
 
-  if (searchResults.length === 0) {
+  if (!searchResults.length) {
     return (
-      <div className="flex">
-        <Bar />
-        <div className="mt-20 ml-[98px]">
-          <h1 className=" font-bold text-2xl ml-16 mt-6">Search Results</h1>
-          <h1 className="mt-10 ml-16">No Results Found.</h1>
+      <div>
+        <div className="flex">
+          <Bar />
+          <div className="mt-20 ml-[98px]">
+            <h1 className=" font-bold text-2xl ml-16 mt-6">Search Results</h1>
+            <h1 className="mt-10 ml-16">No Results Found.</h1>
+          </div>
         </div>
+        ;
       </div>
     );
   }
