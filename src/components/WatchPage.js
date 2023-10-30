@@ -1,15 +1,31 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { closeMenu, headerButtonClose } from "../utils/reduxStore/appSlice";
 import { useSearchParams } from "react-router-dom";
 import CommentsContainer from "./comments/CommentsContainer";
 import LiveChat from "./LiveChat";
 import WatchPageButton from "./WatchPageButton";
-import RealatedVideo from "./RealatedVideo";
+import RelatedVideo from "./RelatedVideo";
+import { YOUTUBE_VIDEO_WATCH_API } from "../utils/constant";
+import { addItem } from "../utils/reduxStore/watchLetterSlice";
 
 const WatchPage = () => {
   const [searchParam] = useSearchParams();
+  const [videoData, setVideoData] = useState();
   const dispatch = useDispatch();
+
+  const videoId = searchParam.get("v");
+
+  useEffect(() => {
+    getVideoDetails();
+  }, [videoId]);
+
+  const getVideoDetails = async () => {
+    const data = await fetch(YOUTUBE_VIDEO_WATCH_API + videoId);
+    const json = await data.json();
+    setVideoData(json.items);
+    dispatch(addItem(json.items[0]));
+  };
 
   useEffect(() => {
     dispatch(closeMenu());
@@ -19,7 +35,7 @@ const WatchPage = () => {
     dispatch(headerButtonClose());
   }, []);
 
-  const videoId = searchParam.get("v");
+  if (videoData === undefined) return;
 
   return (
     <div className="ml-14 mt-16">
@@ -49,7 +65,7 @@ const WatchPage = () => {
           </div>
 
           <div className="w-full ml-1 mt-8 pl-2">
-            <RealatedVideo videoId={videoId} />
+            <RelatedVideo videoId={videoId} />
           </div>
         </div>
       </div>

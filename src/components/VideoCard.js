@@ -1,23 +1,15 @@
 import React from "react";
-import { useDispatch } from "react-redux";
-import { addItem } from "../utils/reduxStore/watchLetterSlice";
 import { convertNumber } from "../utils/helper";
 import { BsDot } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
 const VideoCard = ({ info }) => {
-  const dispatch = useDispatch();
-
-  const handleInfo = () => {
-    dispatch(addItem(info));
-  };
-
   const { snippet, statistics } = info;
   const { channelTitle, title, thumbnails, publishedAt } = snippet;
   const { viewCount } = statistics;
 
   return (
-    <div className="p-2 m-2 after:w-full" onClick={handleInfo}>
+    <div className="p-2 m-2 after:w-full">
       <Link to={"/watch?v=" + info.id}>
         <div className="hover:shadow-lg hover:rounded-xl duration-300 pl-2 pt-2 pb-2">
           <img
