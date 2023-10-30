@@ -26,11 +26,13 @@ const CommentsList = ({
       {comment.replies.length >= 1 && (
         <>
           <div
-            className="cursor-pointer ml-16 px-4 py-2 rounded-lg flex bg-blue-700 w-32 text-white"
+            className="cursor-pointer ml-16 px-4 py-1 rounded-full flex bg-gray-200 w-36 hover:bg-gray-300 duration-200"
             onClick={handleClicked}
           >
             {showComments ? "🔼" : "🔽"}
-            <h1 className="ml-2">{comment.replies.length} Replies </h1>
+            <h1 className="ml-2 font-bold">
+              {comment.replies.length} Replies{" "}
+            </h1>
           </div>
         </>
       )}
@@ -70,15 +72,17 @@ const CommentsContainer = () => {
   };
 
   return (
-    <div className="mt-6 py-2 pr-6">
-      <h1 className="text-xl font-bold">Comments:</h1>
-      <CommentsList
-        key={commentsData.id}
-        handleInsertNode={handleInsertNode}
-        handleDeleteNode={handleDeleteNode}
-        handleEditNode={handleEditNode}
-        comments={comments}
-      />
+    <div className="mt-6 py-2">
+      <h1 className="text-2xl font-bold">Comments:</h1>
+      <div className="mt-6">
+        <CommentsList
+          key={commentsData.id}
+          handleInsertNode={handleInsertNode}
+          handleDeleteNode={handleDeleteNode}
+          handleEditNode={handleEditNode}
+          comments={comments}
+        />
+      </div>
     </div>
   );
 };

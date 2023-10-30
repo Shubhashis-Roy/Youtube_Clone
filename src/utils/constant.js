@@ -7,10 +7,10 @@ export const Youtube_Video_API =
   "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=50&regionCode=IN&key=" +
   Google_Api_Key;
 
+export const YOUTUBE_VIDEO_WATCH_API = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&key=${Google_Api_Key}&id=`;
+
 export const Youtube_Suggetions_API =
   "https://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
-
-// 'https://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q='
 
 const maxResults = 10;
 

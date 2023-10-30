@@ -16,9 +16,7 @@ const GoogleAuth = () => {
         setImg(pic);
         setIsSignIn(true);
       })
-      .catch((err) => {
-        console.log(err);
-      });
+      .catch((err) => {});
   };
 
   const handleLogout = () => {

@@ -29,11 +29,11 @@ const LiveChat = () => {
 
   return (
     <div>
-      <div className="border border-gray-400 w-[420px] ml-6 rounded-t-xl bg-gray-100 flex">
+      <div className="border border-gray-400 w-[435px] ml-6 rounded-t-xl bg-gray-100 flex">
         <p className="py-3 pl-6 "> 🔴 </p>
         <p className="py-3 pl-3 "> Live Chat</p>
       </div>
-      <div className=" w-[420px] h-[400px] ml-6 p-2 border-l border-r border-gray-400 bg-gray-100 overflow-y-scroll flex flex-col-reverse ">
+      <div className=" w-[435px] h-[400px] ml-6 p-2 border-l border-r border-gray-400 bg-gray-100 overflow-y-scroll flex flex-col-reverse ">
         {chatMessages.map((c, index) => (
           <ChatMessage
             key={index}
@@ -44,7 +44,7 @@ const LiveChat = () => {
         ))}
       </div>
       <form
-        className="w-[420px] rounded-b-lg p-1 ml-6 border border-gray-400"
+        className="w-[435px] rounded-b-lg p-1 ml-6 border border-gray-400"
         onSubmit={(e) => {
           e.preventDefault();
           dispatch(

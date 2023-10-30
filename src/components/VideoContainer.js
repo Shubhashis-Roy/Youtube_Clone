@@ -41,9 +41,7 @@ const VideoContainer = () => {
       const json = await data.json();
       setNextPageToken(json?.nextPageToken);
       setVideos([...videos, ...json?.items]);
-    } catch (error) {
-      console.log(error, "error");
-    }
+    } catch (error) {}
   };
 
   const infiniteScroll = () => {

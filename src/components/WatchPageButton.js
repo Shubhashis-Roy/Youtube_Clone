@@ -125,7 +125,7 @@ const WatchPageButton = () => {
   const publishDate = dateTime.toLocaleDateString("en-US", options);
 
   return (
-    <>
+    <div className=" w-[99.5%]">
       <div className="mt-2">
         <h1 className="font-bold text-lg"> {snippet.title} </h1>
       </div>
@@ -252,7 +252,7 @@ const WatchPageButton = () => {
           </div>
         )}
       </div>
-    </>
+    </div>
   );
 };
 
