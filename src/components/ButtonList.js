@@ -28,13 +28,13 @@ const ButtonList = () => {
         <Button name="Live" />
         <Button name="Mixes" />
         <Button name="T-Series" />
-        <Button name="Filmi" />
-        <Button name="Indian pop music" />
-        <Button name="Comedy" />
         <Button name="Programming" />
-        <Button name="JavaSrcipt" />
-        <Button name="Live" />
-        <Button name="Mixes" />
+        <Button name="React" />
+        <Button name="Filmi" />
+        <Button name="Indian Pop Music" />
+        <Button name="Comedy" />
+        <Button name="News" />
+        <Button name="New To You" />
       </div>
     </div>
   );

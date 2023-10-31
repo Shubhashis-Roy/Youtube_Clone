@@ -68,7 +68,7 @@ const SearchBar = () => {
       <form onSubmit={(e) => e.preventDefault()} className=" flex">
         <input
           ref={searchText}
-          className="w-[500px] ml-8 border border-gray-400 p-[6px] rounded-l-full pl-4 mt-1"
+          className="w-[500px] ml-8 border border-gray-400 p-[6px] rounded-l-full pl-4 mt-1 focus:border-blue-500 outline-none"
           placeholder="Search"
           type="text"
           value={searchQuery}

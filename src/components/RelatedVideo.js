@@ -18,7 +18,7 @@ const RelatedVideo = ({ videoId }) => {
   // if (!relatedVideos.length) return;
 
   return (
-    <div className="overflow-y-scroll h-[800px] ">
+    <div className="overflow-y-scroll h-[1250px] ">
       {relatedVideos?.map((video) => (
         <Link
           key={video?.id}
