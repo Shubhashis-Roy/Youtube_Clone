@@ -10,14 +10,13 @@
 </div>
 
 <hr>
-<h3> <a href= "https://netflix-gpt-subha.netlify.app/" >View Demo</a> </h3>
+<h3> <a href= "https://youtube09.netlify.app/" >View Demo</a> </h3>
 <h2>Description</h2>
 
-- This is a simplified version of Netflix, Where user can <b>search</b> a particuler type of movie ( Funny Movies, Action Movies, Horror Movies ) and than some
-  movies will be <b>suggest according to the search. </b>
-- Developed a <b>multi-language</b> support feature, English, Hindi and Spanish.
-- Users can SignUp/Login their account using Gmail and Users can added movies to their favorites list.
-- Using the <b>Dynamic loading</b> concept.
+- I developed a Web App which is a highly scalable video streaming platform that has <b> live chatting </b> and <b> n-level nasted comments </b>.
+- Implemented <b> debouncing </b> to optimize the performance of the search to reduce the network call and also implemented <b> caching using the redux store </b>.
+- Develop <b> Infinite Scroll </b> at homepage where all videos are loading and using <b> Api Pulling </b> for live chatting.
+- Users can SignUp/Login using Gmail, and Users can Like, Subscribe, Watch letters, and filter the videos.
 
 ### Concepts
 
@@ -36,12 +35,11 @@
         <tr>
           <th>React.js</th>
            <th>React-Redux</th>
-           <th>Integrate OpenAI API</th>
+           <th> Integrate YouTube live streaming API</th>
         </tr>
           <tr>
-           <th>Firebase</th>
            <th>Tailwind Css</th>
-           <th>TMDB API</th>
+           <th> Firebase</th>
          </tr>
       </tbody>    
 </table
@@ -49,13 +47,14 @@
 ### <b> NPM Packages </b>
 
 - react
-- openai
-- firebase
-- react-redux
+- react-dom
 - react-icons
+- react-redux
+- react-router
 - react-toastify
 - reduxjs/toolkit
 - react-router-dom
+- firebase
 
 ### Other Applications
 
