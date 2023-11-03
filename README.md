@@ -1,6 +1,6 @@
 <div align="center">
 
-  <img src="https://feeds.abplive.com/onecms/images/uploaded-images/2022/01/31/0dfe05d1f843d2705c096b93ccb80e54_original.jpg?impolicy=abp_cdn&imwidth=650" alt="logo" width="205" height="auto" />
+  <img src="https://rukminim1.flixcart.com/image/850/1000/l0tweq80/poster/p/e/b/small-youtube-logo-multicolour-photo-paper-print-poster-original-imagcj8d3zphfwgz.jpeg" alt="logo" width="305" height="auto" />
 
   <h1>YouTube</h1>
     <p>
