@@ -35,7 +35,7 @@ const LiveChat = () => {
         <div className=" w-[435px] ml-6 h-[20px] text-center mb-24 font-bold">
           <button
             onClick={() => setIsShowChat(true)}
-            className="rounded-full hover:bg-gray-200 border py-2 w-full text-[14px]"
+            className="rounded-full hover:bg-gray-200 duration-300 border py-2 w-full text-[14px]"
           >
             Show Chat
           </button>

@@ -6,6 +6,7 @@ import { addSearchResults } from "../utils/reduxStore/searchResultSlice";
 import { SlMagnifier } from "react-icons/sl";
 import { useNavigate } from "react-router";
 import { AiOutlineClose } from "react-icons/ai";
+// import { Middleware } from "../Middleware/setupProxy";
 
 const SearchBar = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -35,8 +36,8 @@ const SearchBar = () => {
   const getSearchSuggetions = async () => {
     const data = await fetch(Youtube_Suggetions_API + searchQuery);
     const json = await data.json();
+    console.log(json, "hai");
     setSuggetion(json[1]);
-
     dispatch(
       chacheResults({
         [searchQuery]: json[1],
