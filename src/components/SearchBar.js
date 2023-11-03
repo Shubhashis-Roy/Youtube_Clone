@@ -36,7 +36,6 @@ const SearchBar = () => {
   const getSearchSuggetions = async () => {
     const data = await fetch(Youtube_Suggetions_API + searchQuery);
     const json = await data.json();
-    console.log(json, "hai");
     setSuggetion(json[1]);
     dispatch(
       chacheResults({
