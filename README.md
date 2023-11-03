@@ -15,19 +15,9 @@
 
 - I developed a Web App which is a highly scalable video streaming platform that has <b> live chatting </b> and <b> n-level nasted comments </b>.
 - Implemented <b> debouncing </b> to optimize the performance of the search to reduce the network call and also implemented <b> caching using the redux store </b>.
-- Develop <b> Infinite Scroll </b> at homepage where all videos are loading and using <b> Api Pulling </b> for live chatting.
-- Users can SignUp/Login using Gmail, and Users can Like, Subscribe, Watch letters, and filter the videos.
-
-### Concepts
-
-#### Basic concepts of Netfix GPT
-
-- Movie Recomendation : User can <b>search</b> a movie type (Funny Movies, Action Movies, Horror Movies) and than some
-  movies will be <b>suggest according to the search. </b>
-
-- Categorically Distincted: After login or singup, user can witness the contains are divied into their specific domain.
-
-- Favorite list: User after chose any movie or drama or web series they can added in the favorite list.
+- Develop <b> Infinite Scroll </b> at the homepage where all videos are loading and using <b> Api Pulling </b> for live chatting.
+- Users can Like, Subscribe, Watch letters, and filter the videos.
+- Users can SignUp/Login using Google Authentication.
 
 <h2>Technologies</h2>
 <table>
@@ -81,12 +71,7 @@
 
 ### 9. setupp .env variables
 
-- OPENAI_KEY
-- TMDB_KEY
-- FIREBASE_APIKEY
-- FIREBASE_AUTHDOMAIN
-- FIREBASE_PROJECT_ID
-- FIREBASE_APP_ID
+- Google_Api_Key
 
 ### 10. Replace baseUrl with your host address (eg:- http://localhost:3000/ ) for Api call in client side scripts present inside root -> public -> js
 
