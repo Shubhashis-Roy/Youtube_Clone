@@ -1,6 +1,6 @@
 <div align="center">
 
-  <img src="https://feeds.abplive.com/onecms/images/uploaded-images/2022/01/31/0dfe05d1f843d2705c096b93ccb80e54_original.jpg?" alt="logo" width="550" height="auto" />
+  <img src="https://feeds.abplive.com/onecms/images/uploaded-images/2022/01/31/0dfe05d1f843d2705c096b93ccb80e54_original.jpg?" alt="logo" width="510" height="auto" />
 
   <p>
  YouTube with React.js, React-Redux, Tailwind Css, YouTube live streaming API
