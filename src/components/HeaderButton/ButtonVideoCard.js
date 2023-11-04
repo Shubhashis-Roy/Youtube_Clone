@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addItem } from "../utils/reduxStore/watchLetterSlice";
+import { addItem } from "../../utils/reduxStore/watchVideoSlice";
 import { BsDot } from "react-icons/bs";
 import { Link } from "react-router-dom";
-import HomeBar from "./HomeBar";
-import { headerButtonShow } from "../utils/reduxStore/appSlice";
+import HomeBar from "../Home/HomeBar";
+import { headerButtonShow } from "../../utils/reduxStore/appSlice";
 
 const ButtonVideoCard = () => {
   const dispatch = useDispatch();

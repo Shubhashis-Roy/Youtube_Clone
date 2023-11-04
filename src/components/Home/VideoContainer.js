@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import VideoCard from "./VideoCard";
-import { Youtube_Video_API } from "../utils/constant";
+import { Youtube_Video_API } from "../../utils/constant";
 import HomeBar from "./HomeBar";
 import { useDispatch } from "react-redux";
-import { closeMenu, headerButtonShow } from "../utils/reduxStore/appSlice";
+import { closeMenu, headerButtonShow } from "../../utils/reduxStore/appSlice";
 import HomeShimmerUI from "./HomeShimmerUI";
 
 const VideoContainer = () => {

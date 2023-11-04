@@ -1,13 +1,13 @@
 import React from "react";
-import youtubeLogo from "../img/HeaderIcon/Youtube_icon.png";
-
+// import youtubeLogo from "../img/HeaderIcon/Youtube_icon.png";
+import youtubeLogo from "../../img/HeaderIcon/Youtube_icon.png";
 import { useDispatch, useSelector } from "react-redux";
-import { toggleMenu } from "../utils/reduxStore/appSlice";
-import SearchBar from "./SearchBar";
-import ButtonList from "./ButtonList";
+import { toggleMenu } from "../../utils/reduxStore/appSlice";
+import SearchBar from "../Search/SearchBar";
+import ButtonList from "../HeaderButton/ButtonList";
 import { HiMiniBars3 } from "react-icons/hi2";
 import { Link } from "react-router-dom";
-import GoogleAuth from "./GoogleAuth";
+import GoogleAuth from "../Auth/GoogleAuth";
 
 const Header = () => {
   const dispatch = useDispatch();

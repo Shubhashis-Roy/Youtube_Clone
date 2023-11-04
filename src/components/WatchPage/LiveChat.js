@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import ChatMessage from "./ChatMessage";
 import { useDispatch, useSelector } from "react-redux";
-import { addMessage } from "../utils/reduxStore/chatSlice";
-import { generateRandomName, makeid } from "../utils/helper";
-import { LiveChat_SRC, LiveChat_UserSrc } from "../utils/constant";
+import { addMessage } from "../../utils/reduxStore/chatSlice";
+import { generateRandomName, makeid } from "../../utils/helper";
+import { LiveChat_SRC, LiveChat_UserSrc } from "../../utils/constant";
 import { AiOutlineSend } from "react-icons/ai";
 
 const LiveChat = () => {

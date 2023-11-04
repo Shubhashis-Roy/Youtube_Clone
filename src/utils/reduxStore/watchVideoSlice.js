@@ -1,13 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const watchLetterSlice = createSlice({
-  name: "watchLetter",
+  name: "watchedVideo",
   initialState: {
     item: [],
-    watchLetterItem: [],
-    LikedVideos: [],
+    watchLetterVideos: [],
+    likedVideos: [],
     disLikedVideos: [],
-    WatchHistory: [],
+    watchHistory: [],
     subscribe: [],
   },
   reducers: {
@@ -20,25 +20,25 @@ const watchLetterSlice = createSlice({
       }
     },
     addWatchLetter: (state, action) => {
-      state.watchLetterItem.unshift(action.payload);
+      state.watchLetterVideos.unshift(action.payload);
     },
     removeWatchLetter: (state, action) => {
-      let index = state.watchLetterItem.findIndex(
+      let index = state.watchLetterVideos.findIndex(
         (item) => item.id === action.payload
       );
       if (index !== -1) {
-        state.watchLetterItem.splice(index, 1);
+        state.watchLetterVideos.splice(index, 1);
       }
     },
     addLikedVideo: (state, action) => {
-      state.LikedVideos.unshift(action.payload);
+      state.likedVideos.unshift(action.payload);
     },
     removeLikedVideo: (state, action) => {
-      let index = state.LikedVideos.findIndex(
+      let index = state.likedVideos.findIndex(
         (item) => item.id === action.payload
       );
       if (index !== -1) {
-        state.LikedVideos.splice(index, 1);
+        state.likedVideos.splice(index, 1);
       }
     },
     addDisLikedVideo: (state, action) => {
@@ -53,10 +53,10 @@ const watchLetterSlice = createSlice({
       }
     },
     addWatchHistory: (state, action) => {
-      state.WatchHistory.push(action.payload);
+      state.watchHistory.push(action.payload);
     },
     clearHistory: (state) => {
-      state.WatchHistory = [];
+      state.watchHistory = [];
     },
     addSubscribe: (state, action) => {
       state.subscribe.unshift(action.payload);

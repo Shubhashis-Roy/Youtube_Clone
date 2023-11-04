@@ -2,11 +2,11 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import SubscribeVideoCard from "./SubscribeVideoCard";
-import { closeMenu, headerButtonClose } from "../utils/reduxStore/appSlice";
-import Bar from "../components/Bar";
+import { closeMenu, headerButtonClose } from "../../utils/reduxStore/appSlice";
+import Bar from "../Common/Bar";
 
 const Subscribe = () => {
-  const subscribeVideo = useSelector((store) => store.watchLetter.subscribe);
+  const subscribeVideo = useSelector((store) => store.watchedVideo.subscribe);
   const dispatch = useDispatch();
 
   useEffect(() => {

@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { closeMenu, headerButtonClose } from "../utils/reduxStore/appSlice";
+import { closeMenu, headerButtonClose } from "../../utils/reduxStore/appSlice";
 import { useSearchParams } from "react-router-dom";
-import CommentsContainer from "./comments/CommentsContainer";
+import CommentsContainer from "../Comments/CommentsContainer";
 import LiveChat from "./LiveChat";
 import WatchPageButton from "./WatchPageButton";
 import RelatedVideo from "./RelatedVideo";
-import { YOUTUBE_VIDEO_WATCH_API } from "../utils/constant";
-import { addItem } from "../utils/reduxStore/watchLetterSlice";
+import { YOUTUBE_VIDEO_WATCH_API } from "../../utils/constant";
+import { addItem } from "../../utils/reduxStore/watchVideoSlice";
 
 const WatchPage = () => {
   const [searchParam] = useSearchParams();

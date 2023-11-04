@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { addItem } from "../utils/reduxStore/watchLetterSlice";
+import { addItem } from "../../utils/reduxStore/watchVideoSlice";
 
 const SearchVideoCard = ({ info }) => {
   const dispatch = useDispatch();

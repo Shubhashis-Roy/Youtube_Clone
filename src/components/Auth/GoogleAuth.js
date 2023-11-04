@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { auth, provider } from "../utils/firebase";
-import UserIcon from "../img/HeaderIcon/UserIcon.png";
+import { auth, provider } from "../../utils/firebase";
+import UserIcon from "../../assets/HeaderIcon/UserIcon.png";
 import { signInWithPopup, signOut } from "firebase/auth";
 import { GoSignOut, GoSignIn } from "react-icons/go";
 import { FcGoogle } from "react-icons/fc";

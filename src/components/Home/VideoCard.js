@@ -1,5 +1,5 @@
 import React from "react";
-import { convertNumber } from "../utils/helper";
+import { convertNumber } from "../../utils/helper";
 import { BsDot } from "react-icons/bs";
 import { Link } from "react-router-dom";
 

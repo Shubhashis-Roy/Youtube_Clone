@@ -1,17 +1,16 @@
 import { Provider } from "react-redux";
-import Body from "./components/Body";
-import Header from "./components/Header";
+import Body from "./components/Common/Body";
 import store from "./utils/reduxStore/store";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import MainContainer from "./components/MainContainer";
-import WatchPage from "./components/WatchPage";
-import WatchLetter from "./pages/WatchLetter";
-import WatchHistroy from "./pages/WatchHistroy";
-import Subscribe from "./pages/Subscribe";
-import LikedVideos from "./pages/LikedVideos";
-import ShowSearchResults from "./pages/ShowSearchResults";
-import Error from "./components/Error";
-import ButtonVideoCard from "./components/ButtonVideoCard";
+import MainContainer from "./components/Home/MainContainer";
+import WatchPage from "./components/WatchPage/WatchPage";
+import WatchLetter from "./components/pages/WatchLetter";
+import WatchHistroy from "./components/pages/WatchHistroy";
+import Subscribe from "./components/pages/Subscribe";
+import LikedVideos from "./components/pages/LikedVideos";
+import ShowSearchResults from "./components/Search/ShowSearchResults";
+import Error from "./components/Common/Error";
+import ButtonVideoCard from "./components/HeaderButton/ButtonVideoCard";
 
 const appRouter = createBrowserRouter([
   {

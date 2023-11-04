@@ -1,14 +1,14 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { toggleMenu } from "../utils/reduxStore/appSlice";
+import { toggleMenu } from "../../utils/reduxStore/appSlice";
 import { HiMiniBars3 } from "react-icons/hi2";
-import youtubeLogo from "../img/HeaderIcon/Youtube_icon.png";
-import SubscribeIcon from "../img/SideBar/Subscribe.png";
-import HomeIcon from "../img/SideBar/HomeIcon.png";
-import History from "../img/SideBar/History.png";
-import WatchLetter from "../img/SideBar/WatchLetter.png";
-import likeButton from "../img/likeButton.png";
+import youtubeLogo from "../../assets/HeaderIcon/Youtube_icon.png";
+import SubscribeIcon from "../../assets/SideBar/Subscribe.png";
+import HomeIcon from "../../assets/SideBar/HomeIcon.png";
+import History from "../../assets/SideBar/History.png";
+import WatchLetter from "../../assets/SideBar/WatchLetter.png";
+import likeButton from "../../assets/likeButton.png";
 
 const Sidebar = () => {
   const isManuOpen = useSelector((store) => store.app.isManuOpen);

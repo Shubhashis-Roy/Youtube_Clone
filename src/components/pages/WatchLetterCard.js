@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { addItem } from "../utils/reduxStore/watchLetterSlice";
-import { convertNumber } from "../utils/helper";
+import { addItem } from "../../utils/reduxStore/watchVideoSlice";
+import { convertNumber } from "../../utils/helper";
 
 const WatchLetterCard = ({ info }) => {
   const dispatch = useDispatch();

@@ -1,19 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  YOUTUBE_VIDEO_WATCH_API,
-  channel_IMG_URL_1stPart,
-} from "../utils/constant";
-import { channel_IMG_URL_2ndPart } from "../utils/constant";
-import { Subscriber_Counter_1stPart } from "../utils/constant";
-import { Subscriber_Counter_2ndPart } from "../utils/constant";
-import { convertNumber } from "../utils/helper";
+import { channel_IMG_URL_1stPart } from "../../utils/constant";
+import { channel_IMG_URL_2ndPart } from "../../utils/constant";
+import { Subscriber_Counter_1stPart } from "../../utils/constant";
+import { Subscriber_Counter_2ndPart } from "../../utils/constant";
+import { convertNumber } from "../../utils/helper";
 import { MdOutlineAddCircle } from "react-icons/md";
-import dislikeButton from "../img/dislikeButton.png";
-import AfterDislikeButton from "../img/AfterdislikeButton.png";
-import likeButton from "../img/likeButton.png";
-import afterLikeButton from "../img/afterLike.png";
-import { options } from "../utils/helper";
+import dislikeButton from "../../assets/dislikeButton.png";
+import AfterDislikeButton from "../../assets/AfterdislikeButton.png";
+import likeButton from "../../assets/likeButton.png";
+import afterLikeButton from "../../assets/afterLike.png";
+import { options } from "../../utils/helper";
 import { AiTwotoneBell } from "react-icons/ai";
 import { AiFillCheckCircle } from "react-icons/ai";
 import {
@@ -26,7 +23,7 @@ import {
   removeDisLikedVideo,
   removeSubscribe,
   removeWatchLetter,
-} from "../utils/reduxStore/watchLetterSlice";
+} from "../../utils/reduxStore/watchVideoSlice";
 
 const WatchPageButton = () => {
   const [imgUrl, setImaUrl] = useState();
@@ -34,14 +31,14 @@ const WatchPageButton = () => {
   const [more, setMore] = useState(false);
   const dispatch = useDispatch();
 
-  const watchedVideo = useSelector((store) => store.watchLetter.item);
-  const LikedVideos = useSelector((store) => store.watchLetter.LikedVideos);
-  const subscribe = useSelector((store) => store.watchLetter.subscribe);
+  const watchedVideo = useSelector((store) => store.watchedVideo.item);
+  const LikedVideos = useSelector((store) => store.watchedVideo.likedVideos);
+  const subscribe = useSelector((store) => store.watchedVideo.subscribe);
   const watchLetterVideo = useSelector(
-    (store) => store.watchLetter.watchLetterItem
+    (store) => store.watchedVideo.watchLetterVideos
   );
   const disLikedVideos = useSelector(
-    (store) => store.watchLetter.disLikedVideos
+    (store) => store.watchedVideo.disLikedVideos
   );
   dispatch(addWatchHistory(watchedVideo));
 

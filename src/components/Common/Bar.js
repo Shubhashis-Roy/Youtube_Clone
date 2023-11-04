@@ -1,9 +1,9 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import SubscribeIcon from "../img/SideBar/Subscribe.png";
-import HomeIcon from "../img/SideBar/HomeIcon.png";
-import History from "../img/SideBar/History.png";
-import WatchLetter from "../img/SideBar/WatchLetter.png";
+import SubscribeIcon from "../../assets/SideBar/Subscribe.png";
+import HomeIcon from "../../assets/SideBar/HomeIcon.png";
+import History from "../../assets/SideBar/History.png";
+import WatchLetter from "../../assets/SideBar/WatchLetter.png";
 import { Link } from "react-router-dom";
 
 const Bar = () => {

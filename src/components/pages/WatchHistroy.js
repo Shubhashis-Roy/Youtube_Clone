@@ -2,13 +2,13 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import WatchHistoryCard from "./WatchHistoryCard";
-import Bar from "../components/Bar";
+import Bar from "../Common/Bar";
 import { RiDeleteBin6Line } from "react-icons/ri";
-import { clearHistory } from "../utils/reduxStore/watchLetterSlice";
-import { closeMenu, headerButtonClose } from "../utils/reduxStore/appSlice";
+import { clearHistory } from "../../utils/reduxStore/watchVideoSlice";
+import { closeMenu, headerButtonClose } from "../../utils/reduxStore/appSlice";
 
 const WatchHistroy = () => {
-  const WatchHistory = useSelector((store) => store.watchLetter.WatchHistory);
+  const WatchHistory = useSelector((store) => store.watchedVideo.watchHistory);
   const dispatch = useDispatch();
 
   useEffect(() => {

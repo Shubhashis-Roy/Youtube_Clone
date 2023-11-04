@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { Youtube_Search_API } from "../utils/constant";
+import { Youtube_Search_API } from "../../utils/constant";
 import { useNavigate } from "react-router";
 import { useDispatch } from "react-redux";
-import { addButtonResults } from "../utils/reduxStore/searchResultSlice";
+import { addButtonResults } from "../../utils/reduxStore/searchResultSlice";
 
 const Button = ({ name }) => {
   const navigate = useNavigate();

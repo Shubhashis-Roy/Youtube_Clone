@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import SearchVideoCard from "./SearchVideoCard";
-import Bar from "../components/Bar";
-import { headerButtonClose } from "../utils/reduxStore/appSlice";
+import Bar from "../Common/Bar";
+import { headerButtonClose } from "../../utils/reduxStore/appSlice";
 
 const ShowSearchResults = () => {
   const searchResults = useSelector((store) => store.searchResults.results);

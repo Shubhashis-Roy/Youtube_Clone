@@ -1,8 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Youtube_Suggetions_API, Youtube_Search_API } from "../utils/constant";
-import { chacheResults } from "../utils/reduxStore/searchSlice";
-import { addSearchResults } from "../utils/reduxStore/searchResultSlice";
+import {
+  Youtube_Suggetions_API,
+  Youtube_Search_API,
+} from "../../utils/constant";
+import { chacheResults } from "../../utils/reduxStore/searchSlice";
+import { addSearchResults } from "../../utils/reduxStore/searchResultSlice";
 import { SlMagnifier } from "react-icons/sl";
 import { useNavigate } from "react-router";
 import { AiOutlineClose } from "react-icons/ai";
