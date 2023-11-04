@@ -1,6 +1,5 @@
 import React from "react";
-// import youtubeLogo from "../img/HeaderIcon/Youtube_icon.png";
-import youtubeLogo from "../../img/HeaderIcon/Youtube_icon.png";
+import youtubeLogo from "../../assets/HeaderIcon/Youtube_icon.png";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleMenu } from "../../utils/reduxStore/appSlice";
 import SearchBar from "../Search/SearchBar";

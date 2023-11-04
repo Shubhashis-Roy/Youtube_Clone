@@ -1,9 +1,9 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import subscribeIcon from "../../img/SideBar/Subscribe.png";
-import WatchLetter from "../../img/SideBar/WatchLetter.png";
+import subscribeIcon from "../../assets/SideBar/Subscribe.png";
+import WatchLetter from "../../assets/SideBar/WatchLetter.png";
 import { Link } from "react-router-dom";
-import History from "../../img/SideBar/History.png";
+import History from "../../assets/SideBar/History.png";
 
 const HomeBar = () => {
   const sideBar = useSelector((store) => store.app.isManuOpen);
