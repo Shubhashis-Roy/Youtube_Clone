@@ -17,6 +17,7 @@
 - Develop <b> Infinite Scroll </b> at the homepage where all videos are loading and using <b> Api Pulling </b> for live chatting.
 - Users can Like, Subscribe, Watch letters, and filter the videos.
 - Users can SignUp/Login using Google Authentication.
+- All the data is getting from <b> YouTube live streaming API </b>. Also, I Integrate <b>Google Query Suggestion API</b>.
 
 <h2>Technologies</h2>
 <table>
