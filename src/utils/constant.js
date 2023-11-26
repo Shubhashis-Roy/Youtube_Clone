@@ -1,4 +1,4 @@
-export const OFFSET_LIVE_CHAT = 15;
+export const OFFSET_LIVE_CHAT = 30;
 
 export const Youtube_Video_API =
   "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=50&regionCode=IN&key=" +
