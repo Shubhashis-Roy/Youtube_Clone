@@ -9,7 +9,7 @@
 </div>
 
 <hr>
-<h3> <a href= "https://youtube09.netlify.app/" >View Demo</a> </h3>
+<h3> <a href= "https://youtube09.netlify.app/" >Live Demo</a> </h3>
 <h2>Description</h2>
 
 - I developed a Web App which is a highly scalable video streaming platform that has <b> live chatting </b> and <b> n-level nasted comments </b>.
